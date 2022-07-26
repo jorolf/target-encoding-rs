@@ -1,6 +1,6 @@
 [package]
 name = "target-encoding"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Decode and encode byte iterators depending on your target os"
 license = "MIT"
@@ -10,5 +10,5 @@ categories = ["api-bindings", "encoding", "filesystem", "parser-implementations"
 [target.'cfg(windows)'.dependencies]
 winapi = { version = "0.3.9", features = ["winnls", "stringapiset"] }
 
-[target.'cfg(not(windows))'.dependencies]
+[dependencies]
 utf8-decode = "1.0.1"

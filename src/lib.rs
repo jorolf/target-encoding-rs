@@ -7,12 +7,9 @@ use windows::{ByteDecoder, ByteEncoder};
 #[cfg(windows)]
 use winapi::um::winnls;
 
-#[cfg(not(windows))]
 mod not_windows;
-#[cfg(not(windows))]
-use not_windows::Utf8Encoder;
-#[cfg(not(windows))]
-use utf8_decode::Decoder as Utf8Decoder;
+pub use not_windows::Utf8Encoder;
+pub use utf8_decode::Decoder as Utf8Decoder;
 
 pub trait LocalDecode<I>: Iterator<Item = u8> + Sized
 where
